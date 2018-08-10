@@ -20,17 +20,19 @@
 
 int main() {
 
-    //two definitions to start it all!
-    int i = 100, &r1 = i;
-    double d1 = r1;
-    d1 += 0.5;
+    //reassigning references (how error-prone!) and pointers 
 
-    r1 = 101; //equivalent to i = 101
+    int twenty = 20;
+    int fifty = 50;
+    int &reference_twenty = twenty;
 
-    int &r2 = r1; //test if pointers can be assigned to another pointer
+    //instead of a_reference = 10; we TRY it the smart way: using the address-of operator as we did when declaring a reference 
+    //&reference_twenty = fifty; 
+    
+    //all objects that is to-be defined to the pointer must include the & operator (address-of)
+    int *pointer = &twenty;
+    *pointer = fifty;  
 
-    std::cout << i << " " << d1 << " " << r2 << std::endl; 
-
-    return 0;
+    std::cout << pointer << std::endl;  
 
 }
